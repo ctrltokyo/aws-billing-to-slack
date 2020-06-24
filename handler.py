@@ -5,8 +5,9 @@ import os
 import requests
 import sys
 
-n_days = 7
-today = datetime.datetime.today()
+n_days = 9
+base = datetime.datetime.today()
+today = base - datetime.timedelta(days=2)
 week_ago = today - datetime.timedelta(days=n_days)
 
 sparks = ['▁', '▂', '▃', '▄', '▅', '▆', '▇'] # Leaving out the full block because Slack doesn't like it: '█'
@@ -58,7 +59,7 @@ def report_cost(event, context):
 
     result = client.get_cost_and_usage(**query)
 
-    buffer = "%-40s %-7s $%5s\n" % ("Service", "Last 7d", "Yday")
+    buffer = "%-40s %-7s $%5s\n" % ("Service", "Last 9d", "-2-days")
 
     cost_per_day_by_service = defaultdict(list)
 
