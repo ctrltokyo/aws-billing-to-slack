@@ -1,5 +1,7 @@
 # AWS Billing to Slack
 
+**Warning**: This fork contains a mod to delay by 2 days, due to AWS's own billing being delayed (9 days prior -> 2 days prior).
+
 ![image](https://user-images.githubusercontent.com/261584/66362145-3903a200-e947-11e9-91bd-6e40e5919ac4.png)
 
 Sends daily breakdowns of AWS costs to a Slack channel.
