@@ -115,14 +115,14 @@ def report_cost(event, context):
         else:
             emoji = ":warning:"
 
-        summary = "%s Yesterday's cost of $%5.2f is %.0f%% of credit budget $%5.2f for the day." % (
+        summary = "%s The day before yesterday's cost of $%5.2f is %.0f%% of credit budget $%5.2f for the day." % (
             emoji,
             total_costs[-1],
             relative_to_budget,
             allowed_credits_per_day,
         )
     else:
-        summary = "Yesterday's cost was $%5.2f." % (total_costs[-1])
+        summary = "The day before yesterday's cost was $%5.2f." % (total_costs[-1])
 
     hook_url = os.environ.get('SLACK_WEBHOOK_URL')
     if hook_url:
